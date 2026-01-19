@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #040e13;
+    --secundaryColor :#fc0007;
+}
+
+.bg-body-tertiary{
+    background-color: var(--primaryColor) !important;
+}
+
+.navbar-brand, .container-fluid a {
+    color: var(--secundaryColor) !important;
+}
+
