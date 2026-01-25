@@ -1652,7 +1652,22 @@ body {
 }
  */
 
-
+#demoPrincipalLogo {
+  animation: jumpLogo 2.2s cubic-bezier(.28,1.84,.59,.99) infinite;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+#demoPrincipalLogo:hover {
+  filter: brightness(1.15) drop-shadow(0 2px 8px #fff6);
+}
+@keyframes jumpLogo {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-12px) scale(1.07); }
+  30% { transform: translateY(-18px) scale(1.10); }
+  40% { transform: translateY(-10px) scale(1.05); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
