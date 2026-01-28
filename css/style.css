@@ -614,105 +614,105 @@ body {
 
 /* ===== SEÇÃO TATUAGEM & MAQUIAGEM ===== */
 #dual-artists {
-    background: radial-gradient(circle at top left, rgba(168, 85, 247, 0.08), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(0, 217, 255, 0.08), transparent 55%),
+    background: radial-gradient(circle at top left, rgba(0, 217, 255, 0.08), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.08), transparent 55%),
         #050505;
     padding: 8rem 2rem;
     position: relative;
-}
-
-.dual-container {
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.dual-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.dual-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem;
-}
-
-.showcase-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    position: relative;
 }
 
-.showcase-card::after {
-    content: '';
+.makeup-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.makeup-image {
+    min-height: 520px;
+    border-radius: 24px;
+    background: url('../assets/ninaMaquiadora.png') center/cover no-repeat;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+.makeup-overlay {
     position: absolute;
     inset: 0;
-    border-radius: 18px;
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    pointer-events: none;
-    opacity: 0.7;
+    border-radius: 24px;
+    background: radial-gradient(circle at top right, rgba(0, 217, 255, 0.2), transparent 60%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
 }
 
-.showcase-card.makeup::after {
-    border-color: rgba(0, 217, 255, 0.35);
+.makeup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.showcase-media img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
-    filter: saturate(1.1) contrast(1.05);
-}
-
-.showcase-content {
-    padding: 2rem 2.2rem 2.4rem;
-}
-
-.showcase-tag {
+.makeup-tag {
     display: inline-block;
     font-size: 0.75rem;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     font-weight: 700;
-    color: var(--redColor);
-    border: 1px solid rgba(239, 68, 68, 0.5);
-    padding: 0.35rem 0.8rem;
-    margin-bottom: 1.2rem;
-    text-transform: uppercase;
-}
-
-.showcase-card.makeup .showcase-tag {
     color: var(--cyanColor);
-    border-color: rgba(0, 217, 255, 0.6);
+    border: 1px solid rgba(0, 217, 255, 0.5);
+    padding: 0.5rem 1.2rem;
+    width: fit-content;
 }
 
-.showcase-title {
+.makeup-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    letter-spacing: 6px;
+    margin: 0;
 }
 
-.showcase-text {
-    color: #cbd5f0;
-    line-height: 1.7;
+.makeup-subtitle {
+    color: var(--pinkColor);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
 }
 
-.showcase-list {
+.makeup-card {
+    background: rgba(10, 10, 15, 0.85);
+    border: 1px solid rgba(0, 217, 255, 0.35);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+}
+
+.makeup-card p {
+    margin: 0;
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+.makeup-highlights {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: grid;
     gap: 0.6rem;
-    margin: 1.6rem 0 2rem;
-    padding: 0;
     color: #e5e7eb;
 }
 
-.tattoo-instagram {
+.makeup-highlights li::before {
+    content: '◆';
+    color: var(--cyanColor);
+    margin-right: 0.6rem;
+}
+
+.makeup-artist {
+    display: flex;
+    align-items: center;
+}
+
+.makeup-instagram-link {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -720,9 +720,83 @@ body {
     color: #ffffff;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
 }
 
+.makeup-instagram-link img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.makeup-instagram-link:hover {
+    color: var(--cyanColor);
+}
+
+.makeup-cta {
+    background: linear-gradient(135deg, #00d9ff, #a855f7);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    width: fit-content;
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+}
+
+.makeup-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.6);
+}
+
+@media (max-width: 992px) {
+    .makeup-container {
+        grid-template-columns: 1fr;
+    }
+
+    .makeup-image {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 768px) {
+    #dual-artists {
+        padding: 5rem 1.5rem;
+    }
+
+    .makeup-container {
+        gap: 2rem;
+    }
+
+    .makeup-image {
+        min-height: 280px;
+        border-radius: 16px;
+    }
+
+    .makeup-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .makeup-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .makeup-card {
+        padding: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .makeup-cta {
+        padding: 0.8rem 1.6rem;
+        font-size: 0.9rem;
+    }
+}
 /* ===== SEÇÃO MESA DE RPG ===== */
 #rpg-session {
     background: #050505;
@@ -844,69 +918,6 @@ body {
     }
 }
 
-.tattoo-instagram img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-}
-
-.tattoo-instagram:hover {
-    color: var(--redColor);
-}
-
-
-
-.tattoo-instagram.makeup:hover {
-    color: var(--cyanColor);
-}
-
-.showcase-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-weight: 500;
-}
-
-.showcase-list li::before {
-    content: '■';
-    color: var(--redColor);
-    font-size: 0.7rem;
-}
-
-.showcase-card.makeup .showcase-list li::before {
-    color: var(--cyanColor);
-}
-
-.showcase-cta {
-    background: linear-gradient(135deg, #ef4444, #b91c1c);
-    color: #ffffff;
-    border: none;
-    padding: 0.9rem 1.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.showcase-card.makeup .showcase-cta {
-    background: linear-gradient(135deg, #00d9ff, #2563eb);
-    box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
-}
-
-.showcase-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 35px rgba(239, 68, 68, 0.6);
-}
-
-.showcase-card.makeup .showcase-cta:hover {
-    box-shadow: 0 0 35px rgba(0, 217, 255, 0.6);
-}
 
 .makeup-modal {
     background: #0b0b0f;
