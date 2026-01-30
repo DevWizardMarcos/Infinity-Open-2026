@@ -42,6 +42,8 @@ const eventDate = new Date('2026-01-31T13:00:00');
                 const nomeAcompanhante = document.getElementById('nomeAcompanhante')?.value?.trim() || '';
                 const cpfAcompanhante = document.getElementById('cpfAcompanhante')?.value?.trim() || '';
                 const telefoneAcompanhante = document.getElementById('telefoneAcompanhante')?.value?.trim() || '';
+                const rpg = document.querySelector('input[name="rpg"]:checked')?.value || '';
+                const quantidadeVagasRpg = document.getElementById('quantidadeVagasRpg')?.value || '';
 
                 const mensagem = [
                     'Nova inscrição - Infinity Open',
@@ -57,6 +59,10 @@ const eventDate = new Date('2026-01-31T13:00:00');
                         `Nome: ${nomeAcompanhante}`,
                         `CPF: ${cpfAcompanhante}`,
                         `Telefone: ${telefoneAcompanhante}`
+                    ] : []),
+                    `\nMesa de RPG: ${rpg}`,
+                    ...(rpg === 'sim' ? [
+                        `Quantidade de vagas: ${quantidadeVagasRpg}`
                     ] : [])
                 ].join('\n');
 
@@ -103,6 +109,21 @@ const eventDate = new Date('2026-01-31T13:00:00');
                 document.getElementById('nomeAcompanhante').value = '';
                 document.getElementById('cpfAcompanhante').value = '';
                 document.getElementById('telefoneAcompanhante').value = '';
+            }
+        }
+
+        function toggleRPG() {
+            const rpg = document.querySelector('input[name="rpg"]:checked')?.value;
+            const vagasSection = document.getElementById('rpgVagasSection');
+            const vagasSelect = document.getElementById('quantidadeVagasRpg');
+            
+            if (rpg === 'sim') {
+                vagasSection.style.display = 'block';
+                vagasSelect.required = true;
+            } else {
+                vagasSection.style.display = 'none';
+                vagasSelect.required = false;
+                vagasSelect.value = '';
             }
         }
     

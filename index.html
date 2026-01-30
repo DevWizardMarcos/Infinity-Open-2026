@@ -160,7 +160,6 @@
                     </div>
 
                     <!-- Atração 2 -->
-                    <!-- COMENTADO: Tatuadora não vai mais vir ao evento
                     <div class="attraction-card">
                         <div class="card-icon">🎨</div>
                         <h3 class="card-title">TATTOO STATION</h3>
@@ -171,7 +170,6 @@
                         </p>
                         <div class="card-glow"></div>
                     </div>
-                    -->
 
                     <!-- Atração 3 -->
                     <div class="attraction-card">
@@ -237,37 +235,62 @@
         </section>
 
         <section id="dual-artists" class="section-divider">
-            <div class="makeup-container">
-                <div class="makeup-image">
-                    <div class="makeup-overlay"></div>
-                </div>
-                <div class="makeup-content">
-                    <span class="makeup-tag">ARTE NO EVENTO</span>
-                    <h2 class="makeup-title">MAQUIAGEM</h2>
-                    <p class="makeup-subtitle">Make artística e editorial</p>
-                    <div class="makeup-card">
-                        <p>
-                            A maquiadora Nina Ventura criou looks artísticos e editoriais exclusivos 
-                            para nossa cosplayer, que estará no evento em transformação completa. 
-                            Com acabamento profissional, brilho, cores e efeitos especiais, a make 
-                            eterniza o momento e cria uma experiência visual inesquecível no Infinity Open.
+            <div class="artists-grid">
+                <article class="artist-card artist-card--tattoo">
+                    <div class="artist-media">
+                        <img src="assets/angelatatto.jpeg" alt="Tatuagem autoral ao vivo">
+                        <div class="artist-media-overlay"></div>
+                    </div>
+                    <div class="artist-body">
+                        <span class="artist-tag artist-tag--tattoo">TATUAGEM</span>
+                        <h2 class="artist-title">Tatuagem autoral ao vivo</h2>
+                        <p class="artist-text">
+                            Um estúdio preparado para receber você com higiene impecável e arte personalizada.
+                            Escolha entre flash tattoos exclusivos ou crie algo único para eternizar o evento.
                         </p>
+                        <ul class="artist-list">
+                            <li>Designs exclusivos do evento</li>
+                            <li>Atendimento personalizado</li>
+                            <li>Cuidados e orientação pós-tattoo</li>
+                        </ul>
+                        <div class="artist-footer">
+                            <a class="artist-handle" href="https://instagram.com/tattoo.moriss" target="_blank" rel="noopener">
+                                <span class="artist-handle-icon"><img src="assets/logo/demo.png" alt="" srcset="" height="60px"></span>
+                                @tattoo.moriss
+                            </a>
+                            <a href="#join" class="artist-cta artist-cta--tattoo">Agende sua tattoo →</a>
+                        </div>
                     </div>
-                    <ul class="makeup-highlights">
-                        <li>Produção completa para fotos</li>
-                        <li>Look temático e personalizado</li>
-                        <li>Brilho, cores e efeitos especiais</li>
-                    </ul>
-                    <div class="makeup-artist">
-                        <a class="makeup-instagram-link" href="https://www.instagram.com/ninaventura_/" target="_blank" rel="noopener">
-                            <img src="assets/logo/demo.png" alt="Logo da maquiadora Nina Ventura">
-                            <span>@ninaventura</span>
-                        </a>
+                </article>
+
+                <article class="artist-card artist-card--makeup">
+                    <div class="artist-media">
+                        <img src="assets/ninaMaquiadora.png" alt="Make artística e editorial">
+                        <div class="artist-media-overlay"></div>
                     </div>
-                    <button type="button" class="makeup-cta" data-bs-toggle="modal" data-bs-target="#makeupModal">
-                        Ver fotos da maquiadora →
-                    </button>
-                </div>
+                    <div class="artist-body">
+                        <span class="artist-tag artist-tag--makeup">MAQUIAGEM</span>
+                        <h2 class="artist-title">Make artística e editorial</h2>
+                        <p class="artist-text">
+                            Transformações inspiradas no universo do evento, com acabamento profissional para
+                            fotos e vídeos. A maquiadora cria looks que destacam sua personalidade e estilo.
+                        </p>
+                        <ul class="artist-list">
+                            <li>Produção completa para fotos</li>
+                            <li>Looks temáticos e personalizados</li>
+                            <li>Brilho, cores e efeitos especiais</li>
+                        </ul>
+                        <div class="artist-footer">
+                            <a class="artist-handle" href="https://www.instagram.com/ninaventura_/" target="_blank" rel="noopener">
+                                <span class="artist-handle-icon"><img src="assets/logo/demo.png" alt="" srcset="" height="60px"></span>
+                                @ninaventura
+                            </a>
+                            <button type="button" class="artist-cta artist-cta--makeup" data-bs-toggle="modal" data-bs-target="#makeupModal">
+                                Ver fotos da maquiadora →
+                            </button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -376,10 +399,7 @@
                             <option value="nenhuma">Nenhuma</option>
                             <option value="marketing-andromeda">Marketing Andromeda</option>
                             <option value="stranger-things-roteiro">Stranger Things: Do roteiro à cena</option>
-                            <option value="vibe-code-2026">Vibe Code 2026</option>
-                            <option value="opening">Palestra de marketing </option>
                             <option value="generative-ai">Palestra Vibe Code </option>
-                            <option value="mind-flayer">Palestra Stranger things </option>
                         </select>
                     </div>
 
@@ -409,6 +429,31 @@
                         <label for="telefoneAcompanhante" class="form-label">Telefone do acompanhante</label>
                         <input type="tel" class="form-control" id="telefoneAcompanhante" name="telefoneAcompanhante" placeholder="(11) 99999-9999">
                     </div>
+
+                    <div class="col-12 col-md-6">
+                        <label class="form-label d-block">Quer participar da mesa de RPG?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rpg" id="rpgSim" value="sim" required onchange="toggleRPG()">
+                            <label class="form-check-label" for="rpgSim">Sim</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rpg" id="rpgNao" value="nao" required onchange="toggleRPG()">
+                            <label class="form-check-label" for="rpgNao">Não</label>
+                        </div>
+                    </div>
+
+                    <div id="rpgVagasSection" class="col-12 col-md-6" style="display: none;">
+                        <label for="quantidadeVagasRpg" class="form-label">Quantas vagas você precisa?</label>
+                        <select class="form-select" id="quantidadeVagasRpg" name="quantidadeVagasRpg">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="1">1 vaga</option>
+                            <option value="2">2 vagas</option>
+                            <option value="3">3 vagas</option>
+                            <option value="4">4 vagas</option>
+                            <option value="5">5 vagas</option>
+                        </select>
+                    </div>
+
                     <div class="col-12 text-center">
                         <button type="submit" class="btn-reserve">Enviar inscrição →</button>
                     </div>
